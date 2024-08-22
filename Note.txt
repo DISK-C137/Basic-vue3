@@ -1,0 +1,29 @@
+//การอ้างอิงใน script จะใช้ keyword: this
+<!-- การอ้างอิงใน template จะใช้ interpolation {} -->
+
+//ฟังก์ชัน data จะส่งค่าในรูปแบบ Object นำไปใช้ใน template หรือส่วนอื่น ๆ ของ component ได้
+
+//methods คือ การกำหนดความสามารถอื่น ๆ ให้กับ component (ถ้าเขียนโดยใช้ methods ให้ระบุ keyword 'this' ด้านหน้า ตามด้วยชื่อ propoties ที่สนใจ )
+
+-Attribute Binding-
+    Attribute คือ การกำหนดความสามารถให้กับ html tag
+    Attribute Binding คือ การผูกค่า Data กับ html tag
+
+    ตัวอย่างการผูก data 'picture' กับ attribute 'src'
+    <img v-bind:src="picture" width="" height="" /> 
+    หรือ 
+    <img :src="picture" width="" height="" />
+
+-Data Array-
+    ทำการจัดเก็บกลุ่มข้อมูลในตัวแปรเดียว
+
+-Data Object-
+    การนิยาม data ในรูปแบบ Object
+
+-Event-
+    เหตุการณ์ที่เกิดขึ้น ใช้ในกรณีที่อยากให้หน้าเว็บโต้ตอบกับผู้ใช้ได้
+
+    ตัวอย่างการใช้งาน โดยเรียก methods ชื่อ showData
+    <button v-on:click="showData">Click to alert</button>
+    หรือ
+    <button @click="showData">Click to alert</button>
