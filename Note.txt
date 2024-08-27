@@ -27,3 +27,37 @@
     <button v-on:click="showData">Click to alert</button>
     หรือ
     <button @click="showData">Click to alert</button>
+
+-Event Argument-
+    <!-- การใช้งาน Event Argumetn โดยส่ง Argument เป็น parameter ไปที่ Method increment ให้เพิ่มขึ้นทีละ 10 -->
+
+    <!-- การใช้งาน Event Argumetn โดยส่ง Argument เป็น parameter ไปที่ Method decrement ให้ลดลงขึ้นทีละ 10 -->
+
+-Event Input-
+    เพิ่มชื่อผ่าน input โดยใช้ v-on
+    ตัวอย่างการใช้งาน โดยเรียกใช้ methods setNickName
+    <input type="text" v-on:input="setNickName" />
+
+-Event Modifier-
+    เป็นการกำหนดค่าหรือแก้ไข Event ที่เราสนใจ เช่น @click อยากเช็คว่ามีการคลิกเมาส์ซ้าย หรือ คลิกเมาส์ขวา หรือ มีการใช้งานร่วมกับการกด key ต่าง ๆ ไปจนถึงการทำงานในแบบฟอร์มสำหรับดัก Event ตอนกดปุ่ม Submit เป็นต้น
+
+    <form @submit="submitForm"> การเรียกใช้ method submitForm
+      <label for="">Input Nickname</label>
+      <input type="text" v-on:input="setNickName" />
+      <button type="submit">Save</button>
+    </form>
+
+-Ref Dom Element-
+    การเข้าถึงหรืออ้างอิง Element มาใช้งานด้วย ref
+    ตัวอย่าง
+    <!-- การอ้างอิงหรือเข้าถึง โครงสร้างของ element เพื่อนำไปใช้งาน ด้วย ref -->
+    <img :src="picture" :width="size" :height="size" ref="imageURL" />
+    <!-- การอ้างอิงหรือเข้าถึง โครงสร้างของ element เพื่อนำไปใช้งาน ด้วย ref -->
+      <input type="text" v-on:input="setNickName" ref="nickNameEL" />
+
+    //การนำโครงสร้างของ img และ input element ที่อ้างอิงโดย ref มาแสดง
+      console.log(this.$refs.imageEL)
+      console.log(this.$refs.nickNameEL)
+
+    //กำหนดให้ตัวแปร Nickname = element nickNameEL โดยนำค่า value มาแสดง (.value)
+      this.Nickname = this.$refs.nickNameEL.value
